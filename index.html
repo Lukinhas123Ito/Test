@@ -31,8 +31,11 @@
     <form method="post" class="ed1" id="ed1">
         <input type="number" id="id_d" name="id_d" style="max-width:40px">
         <input type="text" class="nm_d" name="nm_d" id="nm_d">
+
         <button class="edit">Editar</button>
-        <button class="delete">Deletar</button>
+
+        <button class="del">Deletar</button>
+
     </form>
 
     <div id="su">
@@ -55,6 +58,33 @@
             $('#nm_d').val(nome)
 
           })
+
+
+          $('.del').click(function(e){
+
+
+e.preventDefault();
+
+var dapa2 = $('.ed1').serialize();
+
+console.log(dapa2)
+$.ajax({
+    type:'POST',
+    dataType: 'JSON',
+    data: dapa2,
+    url: 'php/delete.php',
+    success:function(da2){
+        $('#su').append(`
+        <p>Secesso</p>
+        `)
+
+    }
+
+})
+
+
+})
+
 
         })
     </script>

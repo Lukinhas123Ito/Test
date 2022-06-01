@@ -90,16 +90,16 @@ $(document).ready(function(){
         }
         
     })
+ 
+    //Delete 
+    $('.del').click(function(e){
 
-    
-    //Delete
-    
-    $('.delete').click(function(e){
 
         e.preventDefault();
 
-        var dapa2 = $('.ed1').serialize();
+        var dapa2 = $('#id_d').serialize();
         
+        console.log(dapa2)
         $.ajax({
             type:'POST',
             dataType: 'JSON',
@@ -117,5 +117,7 @@ $(document).ready(function(){
 
     })
 
+
+   
 
 })

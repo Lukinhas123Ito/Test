@@ -2,8 +2,9 @@
 include('conn.php');
 
 $id = mysqli_real_escape_string($pdo, trim($_REQUEST['id_d']));
+$nm = mysqli_real_escape_string($pdo, trim($_REQUEST['nm_d']));
 
-$sql = "DELETE FROM test WHERE id='$id'";
+$sql = "DELETE FROM test WHERE id = '$id'";
 
 $res = mysqli_query($pdo,$sql);
 
