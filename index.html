@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>ssse é um site para os meus inimigos chupar</title>
+    <script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+    <form class="pao" name="pao" method="post">
+        <input type="text" placeholder="nome" id="nm" name="nm" class="nm">
+        <button class="add">Adcionar</button>
+    </form>
+
+    <div id="res">
+
+    </div>
+
+    <input type="text" name="seach" id="seach">
+    
+    <table>
+        <thead>
+        <tr><td value="id">id</td><td value="nm">Nome</td></tr>
+        </thead>
+        <tbody id="table_a">
+
+            <tr id="i">
+                <td>i</td>
+                <td data-target="n">Nome</td>
+                <td><a href="#" data-role="update" data-id="i">Editar</a></td>
+                <td>Deletar</td>
+            </tr>
+
+        </tbody>
+        
+    </table>
+
+    <script>
+        $(document).ready(function(){
+
+
+          $(document).on('click','a[data-role="update"]', function(){
+
+            var id = $(this).data('id');
+            var nome = $('#'+id).children('td[data-target=n]').text();
+
+            
+
+          })
+
+        })
+    </script>
+  <script src="js/Part.js"></script>
+  
+</body>
+</html>
