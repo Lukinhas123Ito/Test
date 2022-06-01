@@ -24,33 +24,41 @@
         <tr><td value="id">id</td><td value="nm">Nome</td></tr>
         </thead>
         <tbody id="table_a">
-
-            <tr id="i">
-                <td>i</td>
-                <td data-target="n">Nome</td>
-                <td><a href="#" data-role="update" data-id="i">Editar</a></td>
-                <td>Deletar</td>
-            </tr>
-
+    
         </tbody>
-        
     </table>
 
+    <form method="post" class="ed1" id="ed1">
+        <input type="number" id="id_d" name="id_d" style="max-width:40px">
+        <input type="text" class="nm_d" name="nm_d" id="nm_d">
+        <button class="edit">Editar</button>
+        <button class="delete">Deletar</button>
+    </form>
+
+    <div id="su">
+
+    </div>
+
     <script>
+
         $(document).ready(function(){
 
 
-          $(document).on('click','a[data-role="update"]', function(){
+          $(document).on('click','button[data-role="update"]', function(){
 
             var id = $(this).data('id');
-            var nome = $('#'+id).children('td[data-target=n]').text();
+            var nome = $('#'+id).children('td[data-target=nm]').text();
 
-            
+            var s = id.replace(/\D+/g, "");
+
+            $('#id_d').val(s)
+            $('#nm_d').val(nome)
 
           })
 
         })
     </script>
+
   <script src="js/Part.js"></script>
   
 </body>

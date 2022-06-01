@@ -14,10 +14,11 @@ while($row = mysqli_fetch_assoc($res)){
     
     echo "
     
-    <tr name="."line".$row['id']." id="."line".$row['id'].">
-        <td value=".$row['id']." "."name="."id".$row['id']." id="."id".$row['id'].">".$row['id']."</td>
-        <td value=".$row['nm']." "."name="."nm".$row['id']." id="."nm".$row['id'].">".$row['nm']."</td>
-        
+    <tr id="."id".$row['id'].">
+        <td>".$row['id']."</td>
+        <td data-target="."nm".">".$row['nm']."</td>
+        <td><button data-role="."update"." data-id="."id".$row['id'].">Editar</button></td>
+        <td><button data-role="."delete"." data-id="."id".$row['id'].">Deletar</button></td>
     </tr>"
     ;
 }

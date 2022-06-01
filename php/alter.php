@@ -1,8 +1,9 @@
 <?php
 include('conn.php');
 
-$nm = mysqli_real_escape_string($pdo, trim($_REQUEST['nm']));
-$id = filter_input($pdo, trim($_REQUEST['id']));
+$id = mysqli_real_escape_string($pdo, trim($_REQUEST['id_d']));
+$nm = mysqli_real_escape_string($pdo, trim($_REQUEST['nm_d']));
+
 
 $sql = "UPDATE test SET nm = '$nm' WHERE id = '$id'";
 

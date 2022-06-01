@@ -1,7 +1,6 @@
 //All part of Jquery
 $(document).ready(function(){
     //Part to insert
-
     $('.add').click(function(e){
 
         e.preventDefault();
@@ -37,9 +36,7 @@ $(document).ready(function(){
         
 
     })
-
     //Seach
-
     $('#seach').keypress(function(e){
 
         e.preventDefault();
@@ -64,22 +61,33 @@ $(document).ready(function(){
 
         e.preventDefault();
 
-        var da = $('.pao').serialize();
+        var dapa = $('.ed1').serialize();
 
-        $.ajax({
-            type:'POST',
-            dataType: 'JSON',
-            data: da,
-            url: '../php/alter.php',
-            success:function(da2){
-                $('#res').append(`
-                <p>Alteração feita feito</p>
-                `)
+        var name =  $('#nm_d').val();
 
-            }
+        if(name = ""){
+            alert('Deu pau maluco')
+        }
 
-        })
-       
+        else{
+
+            $.ajax({
+                type:'POST',
+                dataType: 'JSON',
+                data: dapa,
+                url: '../php/alter.php',
+                success:function(dao){
+                    $('#su').append(`
+
+                    <p>Edição Feita feito</p>
+
+                    `)
+    
+                }
+
+            })
+
+        }
         
     })
 
@@ -90,16 +98,16 @@ $(document).ready(function(){
 
         e.preventDefault();
 
-        var da = $('.pao').serialize();
+        var dapa2 = $('.ed1').serialize();
         
         $.ajax({
             type:'POST',
             dataType: 'JSON',
-            data: da,
+            data: dapa2,
             url: '../php/delete.php',
             success:function(da2){
-                $('#res').append(`
-                <p>Alteração feita feito</p>
+                $('#su').append(`
+                <p>Secesso</p>
                 `)
 
             }
